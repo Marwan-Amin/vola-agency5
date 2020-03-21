@@ -78,7 +78,7 @@
                                     <a href="/"><i class="fa fa-home"></i> Home</a>
                                 </li>
                                 <li>
-                                    <a href="/products-grid"><i class="fa fa-archive"></i> Explore products</a>
+                                    <a href="/products-list"><i class="fa fa-archive"></i> Explore products</a>
                                 </li>
                                 <li>
                                     <a href="/buyers"><i class="fa fa-users"></i> Explore buyers </a>
@@ -96,14 +96,7 @@
 
                             </ul>
                         </div>
-                        <div class="menu_section">
-                            <h3>Live On</h3>
-                            <ul class="nav side-menu">
-                                <li>
-                                    <a><i class="fa fa-bug"></i> GraphQl playground </a>
-                                </li>
-                            </ul>
-                        </div>
+                      
 
                     </div>
                     <!-- /sidebar menu -->

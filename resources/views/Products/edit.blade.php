@@ -24,7 +24,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Enter your product details here</h2>
+                        <h2>Update the product information</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -36,7 +36,7 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Product Name <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="firstname" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" id="firstname" name="name" required="required" class="form-control col-md-7 col-xs-12" value="{{$product->name}}">
                                 </div>
                             </div>
 
@@ -44,7 +44,7 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Product Description <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="first-name" name="description" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" id="first-name" name="description" required="required" class="form-control col-md-7 col-xs-12" value="{{$product->description}}">
                                 </div>
                             </div>
 
@@ -52,7 +52,7 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Product price <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="number" id="first-name" name="price" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="number" id="first-name" name="price" required="required" class="form-control col-md-7 col-xs-12" value="{{$product->price}}">
                                 </div>
                             </div>
 

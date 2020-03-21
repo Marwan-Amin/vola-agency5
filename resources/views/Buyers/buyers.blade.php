@@ -8,9 +8,6 @@
       <div class="title_left">
         <h3> All buyers </h3>
       </div>
-
-
-
       <div class="title_right">
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
           <div class="input-group">
@@ -41,23 +38,19 @@
                 <table id="productsTable" class="table table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th>Id</th>
+                      <th>name</th>
+                      <th>email</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach($allBuyers as $buyer)
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                    </tr>                    
+                      <td>{{$buyer->id}}</td>
+                      <td>{{$buyer->name}}</td>
+                      <td>{{$buyer->email}}</td>
+                    </tr> 
+                    @endforeach                   
                   </tbody>
                 </table>
               </div>

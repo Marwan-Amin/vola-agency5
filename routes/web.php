@@ -20,12 +20,17 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // Products routes
-    Route::get('/products', "ProductController@index");
-    Route::get('/products-grid', "ProductController@indexGrid");
-    Route::get('/products-list', "ProductController@indexList");
+    Route::get('/products', "ProductController@index")->name('index');
+    Route::get('/products-grid', "ProductController@indexGrid")->name('productsGrid');
+    Route::get('/products-list', "ProductController@indexList")->name('productsList');
     Route::get('/product-show', "ProductController@show");
     Route::get('/product/create', "ProductController@create");
+    Route::post('/product/store', "ProductController@store");
+    Route::get('/product/{id}', "ProductController@edit")->name('products.edit');
+    Route::put('/product/{id}', "ProductController@update");
+    Route::delete('/product/{id}', "ProductController@destroy");
 
+    
     // Buyers routes
     Route::get('/buyers', 'UserController@index')->name('buyers');
 

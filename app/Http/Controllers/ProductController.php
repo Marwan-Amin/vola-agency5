@@ -13,23 +13,29 @@ class ProductController extends Controller
         $this->product = new ProductRepository($product);
     }
 
-    public function indexGrid()
-    {
-        return $this->product->indexGrid();
-    }
-
     public function indexList()
     {
         return $this->product->indexList();
     }
-
-    public function show()
-    {
-        return $this->product->show();
-    }
-
+    
     public function create()
     {
         return $this->product->create();
     }
+
+    public function store(Request $request)
+    {
+        return $this->product->store($request);
+    }
+
+    public function edit($id)
+    {
+        return $this->product->edit($id);
+    }
+
+    public function destroy($id)
+    {
+        return $this->product->destroy($id);
+    }
+    
 }
