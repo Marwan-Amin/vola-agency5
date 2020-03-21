@@ -2,27 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\ProductRepositories\ProductRepository;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct(Product $product)
+    {
+        $this->product = new ProductRepository($product);
+    }
+
     public function indexGrid()
     {
-        return view('Products.productsGrid');
+        return $this->product->indexGrid();
     }
 
     public function indexList()
     {
-        return view('Products.productsList');
+        return $this->product->indexList();
     }
 
     public function show()
     {
-        return view('Products.showProduct');
+        return $this->product->show();
     }
 
     public function create()
     {
-        return view('Products.create');
+        return $this->product->create();
     }
 }
