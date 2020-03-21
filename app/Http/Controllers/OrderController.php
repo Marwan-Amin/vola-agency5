@@ -6,5 +6,13 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('Orders.orders');
+    }
+
+    public function invoice() 
+    {
+        return view('Orders.invoice');
+    }
 }

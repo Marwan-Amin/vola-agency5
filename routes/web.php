@@ -17,44 +17,20 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/products', function () {
-    return view('Products.productsGrid');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Products routes
+    Route::get('/products', "ProductController@index");
+    Route::get('/products-grid', "ProductController@indexGrid");
+    Route::get('/products-list', "ProductController@indexList");
+    Route::get('/product-show', "ProductController@show");
+    Route::get('/product/create', "ProductController@create");
+
+    // Buyers routes
+    Route::get('/buyers', 'UserController@index')->name('buyers');
+
+    // Orders routes
+    Route::get('/orders', "OrderController@index");
+    Route::get('/orders/invoice', "OrderController@invoice");
 });
-
-Route::get('/products-grid', function () {
-    return view('Products.productsGrid');
-});
-
-Route::get('/products-list', function () {
-    return view('Products.productsList');
-});
-
-Route::get('/product-show', function () {
-    return view('Products.showProduct');
-});
-
-Route::get('/buyers', function () {
-    return view('Buyers.buyers');
-});
-
-Route::get('/orders', function () {
-    return view('Orders.orders');
-});
-
-Route::get('/orders/invoice', function () {
-    return view('Orders.invoice');
-});
-
-Route::get('/product/create', function () {
-    return view('Products.create');
-});
-
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
