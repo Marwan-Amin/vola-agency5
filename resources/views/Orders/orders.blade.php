@@ -40,23 +40,21 @@
                 <table id="productsTable" class="table table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th class="text-center"> order id</th>
+                      <th class="text-center"> user name</th>
+                      <th class="text-center"> product name</th>
+                      <th class="text-center"> created at</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach($orders as $order)
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                    </tr>                    
+                      <td class="text-center">{{$order->id}}</td>
+                      <td class="text-center">{{$order->user->name}}</td>
+                      <td class="text-center">{{$order->product->name}}</td>
+                      <td class="text-center">{{$order->created_at}}</td>
+                    </tr>  
+                    @endforeach                  
                   </tbody>
                 </table>
               </div>

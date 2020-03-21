@@ -2,9 +2,11 @@
 
 namespace App\ProductRepositories;
 
+use App\Order;
 use App\Product;
 use App\ProductRepositories\ProductRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use League\CommonMark\Util\PrioritizedList;
 
@@ -15,8 +17,11 @@ class ProductRepository implements ProductRepositoryInterface
     {
         $products = Product::all();
 
+        $userCart = count(Order::where('user_id',Auth::user()->id)->get());
+
         return view('Products.productsList',[
-            'products' => $products
+            'products' => $products,
+            'userCart' => $userCart
         ]);
     }
 

@@ -6,7 +6,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3> Select your products </h3>
+        <h1> <i class="fa fa-shopping-cart" width=100>  {{$userCart}}</i> </h1>
       </div>
 
       <div class="title_right">
@@ -42,7 +42,8 @@
                 <table id="productsTable" class="table table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th >Product name</th>
+                      <th class="text-center">Add to cart</th>
+                      <th>Product name</th>
                       <th class="text-center" width=600>Product description</th>
                       <th class="text-center">price</th>
                       <th class="text-center">edit</th>
@@ -53,11 +54,15 @@
                   <tbody>
                     @foreach($products as $product)
                     <tr>
+                      <form action="/order/create/{{$product->id}}" method="POST">
+                      @csrf
+                      <td class="text-center"><Button type="submit" class="btn btn-default" > + <i class="fa fa-shopping-cart"></i></Button> </td>
+                      </form>
                       <td>{{$product->name}}</td>
                       <td>{{$product->description}}</td>
                       <td class="text-center">{{$product->price}} EGP </td>
                       <td class="text-center">
-                        <a class="btn btn-success" href="{{route('products.edit',['id'=> $product->id ])}}" >Edit </a>
+                        <a class="btn btn-success" href="{{route('products.edit',['id'=> $product->id ])}}">Edit </a>
                       </td>
                       <td class="text-center">
                         <form action="/product/{{$product->id}}" method="POST" style="display:inline-block">

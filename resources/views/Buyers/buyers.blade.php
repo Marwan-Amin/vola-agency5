@@ -38,17 +38,19 @@
                 <table id="productsTable" class="table table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>name</th>
-                      <th>email</th>
+                      <th class="text-center">Id</th>
+                      <th class="text-center">name</th>
+                      <th class="text-center">email</th>
+                      <th class="text-center">show all orders</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach($allBuyers as $buyer)
                     <tr>
-                      <td>{{$buyer->id}}</td>
-                      <td>{{$buyer->name}}</td>
-                      <td>{{$buyer->email}}</td>
+                      <td class="text-center">{{$buyer->id}}</td>
+                      <td class="text-center">{{$buyer->name}}</td>
+                      <td class="text-center">{{$buyer->email}}</td>
+                      <td class="text-center"><a href="/orders/invoice/{{$buyer->id}}"><button class="btn btn-inverse">show invoice</button></a></td>
                     </tr> 
                     @endforeach                   
                   </tbody>
